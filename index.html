@@ -3,63 +3,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to Our Family Film Archive</title>
+  <title>Family Film Archive</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      color: #333;
       margin: 0;
-      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
     }
+
+    header {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Super_8_mm_reel.jpg/1024px-Super_8_mm_reel.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
     .container {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-    h1 {
-      color: #005f73;
+
+    .intro {
       text-align: center;
+      margin-bottom: 2rem;
     }
-    p {
+
+    .video-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .video-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .video-card:hover {
+      transform: scale(1.02);
+    }
+
+    .video-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .video-card h3 {
+      margin: 0.8rem 0 0.4rem;
       font-size: 1.1rem;
-      line-height: 1.6;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+
+    .video-card p {
+      font-size: 0.95rem;
+      color: #555;
     }
-    li {
-      margin: 1rem 0;
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #aaa;
     }
+
     a {
       color: #0a9396;
       text-decoration: none;
-      font-weight: bold;
     }
+
     a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to Our Family Film Archive</h1>
-    <p>
-      This is a digital collection of our 8mm and Super 8mm home movies. 
-      Feel free to browse the videos below and leave comments or memories 
-      you’d like to share. This archive is private — please do not share links outside the family.
-    </p>
 
-    <h2>Available Videos:</h2>
-    <ul>
-      <li><a href="christmas-1972.html">🎄 Christmas 1972</a></li>
-      <li><a href="wedding-1980.html">💍 Wedding 1980</a></li>
-      <li><a href="vacation-1965.html">🌞 Summer Vacation 1965</a></li>
-    </ul>
-  </div>
+<header>
+  <h1>Family Film Archive</h1>
+</header>
+
+<div class="container">
+  <section class="intro">
+    <p>Welcome to our digitized collection of 8mm and Super 8mm home movies. 
+    These reels hold precious memories spanning generations. Click a film to view and leave your thoughts or identify people you recognize.</p>
+  </section>
+
+  <section class="video-list">
+
+    <div class="video-card">
+      <a href="video001.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/8mm_Camcorder.jpg/640px-8mm_Camcorder.jpg" alt="Christmas 1972">
+        <h3>Video 001 – Christmas 1972</h3>
+        <p>Unwrapping presents at Grandma's house. Who's holding the toy train?</p>
+      </a>
+    </div>
+
+    <div class="video-card">
+      <a href="video002.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Film_reel_icon.png" alt="Wedding 1980">
+        <h3>Video 002 – Wedding 1980</h3>
+        <p>Ceremony and reception from Aunt Clara’s wedding. Spot Dad dancing!</p>
+      </a>
+    </div>
+
+    <div class="video-card">
+      <a href="video003.html">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Camera_with_8mm_film.jpg/640px-Camera_with_8mm_film.jpg" alt="Vacation 1965">
+        <h3>Video 003 – Vacation 1965</h3>
+        <p>Beach day and fishing trip. Help identify who caught the biggest fish.</p>
+      </a>
+    </div>
+
+  </section>
+</div>
+
+<footer>
+  &copy; 2025 Family Film Archive. All rights reserved.
+</footer>
+
 </body>
 </html>
+
