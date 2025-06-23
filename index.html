@@ -8,8 +8,14 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/6/6f/Film_grain_texture.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
+    }
+
+    .overlay {
+      background: rgba(255, 255, 255, 0.85);
+      min-height: 100vh;
     }
 
     header {
@@ -25,7 +31,7 @@
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin: 0;
     }
 
@@ -78,7 +84,7 @@
     footer {
       text-align: center;
       padding: 1rem;
-      color: #aaa;
+      color: #777;
     }
 
     a {
@@ -93,49 +99,48 @@
 </head>
 <body>
 
-<header>
-  <h1>Family Film Archive</h1>
-</header>
+<div class="overlay">
+  <header>
+    <h1>Family Film Archive</h1>
+  </header>
 
-<div class="container">
-  <section class="intro">
-    <p>Welcome to our digitized collection of 8mm and Super 8mm home movies. 
-    These reels hold precious memories spanning generations. Click a film to view and leave your thoughts or identify people you recognize.</p>
-  </section>
+  <div class="container">
+    <section class="intro">
+      <p>Welcome to our digitized collection of 8mm and Super 8mm home movies. 
+      These reels hold precious memories spanning generations. Click a film to view and leave your thoughts or identify people you recognize.</p>
+    </section>
 
-  <section class="video-list">
+    <section class="video-list">
+      <div class="video-card">
+        <a href="video001.html">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/8mm_Camcorder.jpg/640px-8mm_Camcorder.jpg" alt="Christmas 1972">
+          <h3>Video 001 – Christmas 1972</h3>
+          <p>Unwrapping presents at Grandma's house. Who's holding the toy train?</p>
+        </a>
+      </div>
 
-    <div class="video-card">
-      <a href="video001.html">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/8mm_Camcorder.jpg/640px-8mm_Camcorder.jpg" alt="Christmas 1972">
-        <h3>Video 001 – Christmas 1972</h3>
-        <p>Unwrapping presents at Grandma's house. Who's holding the toy train?</p>
-      </a>
-    </div>
+      <div class="video-card">
+        <a href="video002.html">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Film_reel_icon.png" alt="Wedding 1980">
+          <h3>Video 002 – Wedding 1980</h3>
+          <p>Ceremony and reception from Aunt Clara’s wedding. Spot Dad dancing!</p>
+        </a>
+      </div>
 
-    <div class="video-card">
-      <a href="video002.html">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Film_reel_icon.png" alt="Wedding 1980">
-        <h3>Video 002 – Wedding 1980</h3>
-        <p>Ceremony and reception from Aunt Clara’s wedding. Spot Dad dancing!</p>
-      </a>
-    </div>
+      <div class="video-card">
+        <a href="video003.html">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Camera_with_8mm_film.jpg/640px-Camera_with_8mm_film.jpg" alt="Vacation 1965">
+          <h3>Video 003 – Vacation 1965</h3>
+          <p>Beach day and fishing trip. Help identify who caught the biggest fish.</p>
+        </a>
+      </div>
+    </section>
+  </div>
 
-    <div class="video-card">
-      <a href="video003.html">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Camera_with_8mm_film.jpg/640px-Camera_with_8mm_film.jpg" alt="Vacation 1965">
-        <h3>Video 003 – Vacation 1965</h3>
-        <p>Beach day and fishing trip. Help identify who caught the biggest fish.</p>
-      </a>
-    </div>
-
-  </section>
+  <footer>
+    &copy; 2025 Family Film Archive. All rights reserved.
+  </footer>
 </div>
-
-<footer>
-  &copy; 2025 Family Film Archive. All rights reserved.
-</footer>
 
 </body>
 </html>
-
