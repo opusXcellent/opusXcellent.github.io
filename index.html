@@ -3,144 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Family Film Archive</title>
+  <title>Welcome to The Blasi Capalbo Film Archive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Quicksand', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.rawpixel.com/image_social_landscape/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTlfcGhvdG9fZW1wdHlfc2NlbmVfb2ZfbW92aWVfdGhlYXRlcl9mcm9tX3RoZV8xOV9mMmJiZTRiNy1mMmEzLTQwYjEtYTI4My0xNjlhNTI4MDY2M2FfMS5qcGc.jpg') no-repeat center center fixed;
-      background-size: cover;
+      padding: 0;
       color: #333;
+      position: relative;
+      z-index: 0;
     }
 
-    .overlay {
-      background: rgba(255, 255, 255, 0.85);
-      min-height: 100vh;
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://myfilmarchive.s3.us-east-1.amazonaws.com/cinema1.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+      z-index: -1;
     }
 
     header {
-      background-image: url('https://commons.wikimedia.org/wiki/File:8mm_Film_Reels.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px 0;
+      text-align: center;
     }
 
     header h1 {
-      font-size: 2.8rem;
       margin: 0;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      font-size: 2.5em;
+      color: #2c3e50;
     }
 
     .intro {
+      background: linear-gradient(to right, #fdfcfb, #e2d1c3);
+      border: 2px solid #d4a373;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       text-align: center;
-      margin-bottom: 2rem;
+      line-height: 1.7;
+      color: #4b3f2f;
     }
 
-    .video-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+    .intro-image {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .intro p {
+      margin-bottom: 1.2em;
+      font-size: 1.1em;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     .video-card {
-      background: white;
-      padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 30px;
       transition: transform 0.2s;
     }
 
     .video-card:hover {
-      transform: scale(1.02);
+      transform: translateY(-5px);
     }
 
-    .video-card img {
+    .video-card img.thumbnail {
       width: 100%;
-      height: 160px;
-      object-fit: cover;
       border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .video-card h3 {
-      margin: 0.8rem 0 0.4rem;
-      font-size: 1.1rem;
+      margin-top: 0;
+      color: #4a4a4a;
     }
 
     .video-card p {
-      font-size: 0.95rem;
-      color: #555;
+      color: #6b6b6b;
+    }
+
+    a.video-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a.video-link:hover {
+      text-decoration: underline;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
-      color: #777;
-    }
-
-    a {
-      color: #0a9396;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
+      padding: 20px;
+      color: #555;
+      background-color: rgba(255, 255, 255, 0.85);
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-
-<div class="overlay">
   <header>
-    <h1>Family Film Archive</h1>
+    <h1>Welcome to The Blasi Capalbo Film Archive 🎥❤️</h1>
+    <p>A collection of treasured moments from our past</p>
   </header>
 
+  <section class="intro">
+    <img src="https://myfilmarchive.s3.us-east-1.amazonaws.com/thearchive2.jpg" alt="Family Photo" class="intro-image">
+    <p style="font-size: 1.4em; font-weight: bold;">👋 Welcome, family and friends!</p>
+    <p>I am thrilled to share my father's timeless treasures with all of you! 🎉</p>
+    <p>Please watch the videos below and feel free to leave a comment if you recognize someone or remember a special moment. Many of these clips contain faces, voices, and places from years gone by — and your insights help keep our history alive!</p>
+    <p>If you can help identify anyone or have stories to add, we’d love to hear from you. 💬📸</p>
+    <p>Vincent Capalbo - vcapalbo@usa.net</p>
+  </section>
+
   <div class="container">
-    <section class="intro">
-      <p>Welcome to our digitized collection of 8mm and Super 8mm home movies. 
-      These reels hold precious memories spanning generations. Click a film to view and leave your thoughts or identify people you recognize.</p>
-    </section>
+    <div class="video-card">
+      <img class="thumbnail" src="https://myfilmarchive.s3.us-east-1.amazonaws.com/thumb-ship.jpg" alt="Tall Ship Thumbnail">
+      <h3>Test Video</h3>
+      <p>A tall ship in the water.</p>
+      <a class="video-link" href="https://opusXcellent.github.io/christmas-1972.html" target="_blank">Watch Video</a>
+    </div>
 
-    <section class="video-list">
-      <div class="video-card">
-        <a href="video001.html">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Tagline_reel.svg/640px-Tagline_reel.svg" alt="Christmas 1972">
-          <h3>Video 001 – Christmas 1972</h3>
-          <p>Unwrapping presents at Grandma's house. Who's holding the toy train?</p>
-        </a>
-      </div>
+    <div class="video-card">
+      <img class="thumbnail" src="https://myfilmarchive.s3.us-east-1.amazonaws.com/thumb-lake-tahoe.jpg" alt="Lake Tahoe Thumbnail">
+      <h3>Summer Trip to Lake Tahoe</h3>
+      <p>Remember the canoe race and the night bonfire? This video captures our adventure-packed summer getaway.</p>
+      <a class="video-link" href="videos/lake-tahoe-trip.mp4" target="_blank">Watch Video</a>
+    </div>
 
-      <div class="video-card">
-        <a href="video002.html">
-          <img src="https://commons.wikimedia.org/wiki/File:Filmreel-icon.svg" alt="Wedding 1980">
-          <h3>Video 002 – Wedding 1980</h3>
-          <p>Ceremony and reception from Aunt Clara’s wedding. Spot Dad dancing!</p>
-        </a>
-      </div>
-
-      <div class="video-card">
-        <a href="video003.html">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/P_Movie.svg" alt="Vacation 1965">
-          <h3>Video 003 – Vacation 1965</h3>
-          <p>Beach day and fishing trip. Help identify who caught the biggest fish.</p>
-        </a>
-      </div>
-    </section>
+    <div class="video-card">
+      <img class="thumbnail" src="https://myfilmarchive.s3.us-east-1.amazonaws.com/thumb-christmas1999.jpg" alt="Christmas 1999 Thumbnail">
+      <h3>Christmas Morning 1999</h3>
+      <p>The magic of childhood and the joy of giving. Enjoy the nostalgia with the tree, the gifts, and everyone's smiles.</p>
+      <a class="video-link" href="videos/christmas-1999.mp4" target="_blank">Watch Video</a>
+    </div>
   </div>
 
   <footer>
-    &copy; 2025 Family Film Archive. All rights reserved.
+    © 2025 The Blasi Capalbo Film Archive | Handcrafted with love 💖
   </footer>
-</div>
-
 </body>
 </html>
