@@ -95,6 +95,16 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
+    .video-card.horizontal .video-content {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .video-card.horizontal .video-text {
+      flex: 1;
+    }
+
     .video-card h3 {
       margin-top: 0;
       color: #4a4a4a;
@@ -152,12 +162,21 @@
       <a class="video-link" href="https://opusXcellent.github.io/No1967-seaside-pool.html">Watch Video</a>
     </div>
 
-    <div class="video-card">
-      <img class="thumbnail" src="https://myfilmarchive.s3.us-east-1.amazonaws.com/thumb-lake-tahoe.jpg" alt="Lake Tahoe Thumbnail">
-      <h3>Summer Trip to Lake Tahoe</h3>
-      <p>Remember the canoe race and the night bonfire? This video captures our adventure-packed summer getaway.</p>
-      <a class="video-link" href="videos/lake-tahoe-trip.mp4">Watch Video</a>
+  <div class="video-card horizontal">
+    <div class="video-content">
+      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No1967-seaside-pool.png">
+        <img class="thumbnail"
+             src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No1967-seaside-pool.png"
+             alt="No1967 Thumbnail"
+             style="max-width: 200px; width: 100%; height: auto;">
+      </a>
+      <div class="video-text">
+        <h3>Seaside and Pool</h3>
+        <p>Date is unknown. Please comment with details.</p>
+        <a class="video-link" href="https://opusXcellent.github.io/No1967-seaside-pool.html">Watch Video</a>
+      </div>
     </div>
+  </div>
 
     <div class="video-card">
       <img class="thumbnail" src="https://myfilmarchive.s3.us-east-1.amazonaws.com/thumb-christmas1999.jpg" alt="Christmas 1999 Thumbnail">
