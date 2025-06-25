@@ -68,9 +68,12 @@
     }
 
     .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .video-card {
