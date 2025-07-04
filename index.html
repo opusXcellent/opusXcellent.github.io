@@ -93,6 +93,13 @@
     .filter-bar button:hover {
       background-color: #b37a50;
     }
+
+    .filter-bar button.active {
+      background-color: #4b3f2f;
+      color: #fff;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+      font-weight: bold;
+    }
     
     .video-card {
       background-color: rgba(255, 255, 255, 0.9);
@@ -348,6 +355,9 @@
       button.addEventListener("click", () => {
         const filter = button.getAttribute("data-filter");
         let anyVisible = false;
+    
+        buttons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
 
         cards.forEach(card => {
           const year = card.getAttribute("data-year");
@@ -358,7 +368,7 @@
             card.style.display = "none";
           }
         });
-  
+
         instruction.style.display = anyVisible ? "none" : "block";
       });
     });
