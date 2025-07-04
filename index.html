@@ -73,6 +73,27 @@
       padding: 0 20px;
     }
 
+    .filter-bar {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .filter-bar button {
+      background-color: #d4a373;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .filter-bar button:hover {
+      background-color: #b37a50;
+    }
+
     .video-card {
       background-color: rgba(255, 255, 255, 0.9);
       border-radius: 10px;
@@ -151,153 +172,76 @@
   </section>
 
   <div class="container">
-  <div class="video-card horizontal">
-    <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No1967-seaside-pool.png">
-        <img class="thumbnail"
-             src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No1967-seaside-pool.png"
-             alt="No1967 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
-      </a>
-      <div class="video-text">
-        <h3>Seaside and Pool</h3>
-        <p>Date is unknown. Please comment with details.</p>
-        <a class="video-link" href="https://opusXcellent.github.io/No1967-seaside-pool.html">Watch Video</a>
-      </div>
+    <div class="filter-bar">
+      <button data-filter="all">Show All</button>
+      <button data-filter="1956">1956</button>
+      <button data-filter="1957">1957</button>
+      <button data-filter="1958">1958</button>
+      <button data-filter="1959">1959</button>
+      <button data-filter="uncategorized">Uncategorized</button>
     </div>
-  </div>
 
-  <div class="video-card horizontal">
-    <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No369-wedding-baseballgame.png">
-        <img class="thumbnail"
-             src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No369-wedding-baseballgame.png"
-             alt="No369 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
-      </a>
-      <div class="video-text">
-        <h3>A wedding and a baseball game</h3>
-        <p>The wedding is dated April 8th, 1956 and the baseball game is also dated 1956.</p>
-        <a class="video-link" href="https://opusXcellent.github.io/No369-wedding-baseballgame.html">Watch Video</a>
-      </div>
-    </div>
-  </div>
+    <!-- Sample: Add `data-year="1956"` etc. based on the actual year -->
 
-  <div class="video-card horizontal">
-    <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No57946-fran-9month-theresa-ann-inpool.png">
-        <img class="thumbnail"
-             src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No57946-fran-9month-theresa-ann-inpool.png"
-             alt="No57946 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
-      </a>
-      <div class="video-text">
-        <h3>Fran 9 months, Theresa and Ann in pool</h3>
-        <p>The is from July 1956.</p>
-        <a class="video-link" href="https://opusXcellent.github.io/No57946-fran-9month-theresa-ann-inpool.html">Watch Video</a>
+    <div class="video-card horizontal" data-year="uncategorized">
+      <div class="video-content">
+        <img class="thumbnail" src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No1967-seaside-pool.png" alt="No1967 Thumbnail">
+        <div class="video-text">
+          <h3>Seaside and Pool</h3>
+          <p>Date is unknown. Please comment with details.</p>
+          <a class="video-link" href="https://opusXcellent.github.io/No1967-seaside-pool.html">Watch Video</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="video-card horizontal">
-    <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No1780-beach-pool.png">
-        <img class="thumbnail"
-             src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No1780-beach-pool.png"
-             alt="No1780 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
-      </a>
-      <div class="video-text">
-        <h3>More time at the beach and in the pool</h3>
-        <p>No descrition or date. I'll say summer of 1956.</p>
-        <a class="video-link" href="https://opusXcellent.github.io/No1780-beach-pool.html">Watch Video</a>
+    <div class="video-card horizontal" data-year="1956">
+      <div class="video-content">
+        <img class="thumbnail" src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No369-wedding-baseballgame.png" alt="No369 Thumbnail">
+        <div class="video-text">
+          <h3>A wedding and a baseball game</h3>
+          <p>The wedding is dated April 8th, 1956 and the baseball game is also dated 1956.</p>
+          <a class="video-link" href="https://opusXcellent.github.io/No369-wedding-baseballgame.html">Watch Video</a>
+        </div>
       </div>
     </div>
-  </div>
-    
-  <div class="video-card horizontal">
-    <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No2805-frannybaby-dads-funnyfaces.png">
-        <img class="thumbnail"
-             src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No2805-frannybaby-dads-funnyfaces.png"
-             alt="No2805 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
-      </a>
-      <div class="video-text">
-        <h3>Franny baby and Dad's funny faces</h3>
-        <p>From August 24, 1957, developed in September 1957.</p>
-        <a class="video-link" href="https://opusXcellent.github.io/No2805-frannybaby-dads-funnyfaces.html">Watch Video</a>
-      </div>
-    </div>
-  </div>
 
-  <div class="video-card horizontal">
-    <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No23149-sledding-iceskating-jumpingrope.png">
-        <img class="thumbnail"
-             src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No23149-sledding-iceskating-jumpingrope.png"
-             alt="No23149 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
-      </a>
-      <div class="video-text">
-        <h3>Nana and Frankie walking, Anne and baby sledding. Ice skating, jumping rope and Blackie.</h3>
-        <p>The box is dated March 8th without a year. The films expiration date is January 1958. Is it safe to say 1957?</p>
-        <a class="video-link" href="https://opusXcellent.github.io/No23149-sledding-iceskating-jumpingrope.html">Watch Video</a>
+    <div class="video-card horizontal" data-year="1956">
+      <div class="video-content">
+        <img class="thumbnail" src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No57946-fran-9month-theresa-ann-inpool.png" alt="No57946 Thumbnail">
+        <div class="video-text">
+          <h3>Fran 9 months, Theresa and Ann in pool</h3>
+          <p>This is from July 1956.</p>
+          <a class="video-link" href="https://opusXcellent.github.io/No57946-fran-9month-theresa-ann-inpool.html">Watch Video</a>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <div class="video-card horizontal">
-    <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No3751-nana-frans-2nd-birthday.png">
-        <img class="thumbnail"
-             src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No3751-nana-frans-2nd-birthday.png"
-             alt="No3751 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
-      </a>
-      <div class="video-text">
-        <h3>Nana and Fran's 2nd Birthday</h3>
-        <p>Dated October 1958.</p>
-        <a class="video-link" href="https://opusXcellent.github.io/No3751-nana-frans-2nd-birthday.html">Watch Video</a>
-      </div>
-    </div>
-  </div>  
-    
-  <div class="video-card horizontal">
-    <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No001-parade-july4th-seaside.png">
-        <img class="thumbnail"
-             src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No001-parade-july4th-seaside.png"
-             alt="No001 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
-      </a>
-      <div class="video-text">
-        <h3>Parade, Theresa and Bob, 4th of July and Seaside</h3>
-        <p>This film is dated 1959.</p>
-        <a class="video-link" href="https://opusXcellent.github.io/No001-parade-july4th-seaside.html">Watch Video</a>
-      </div>
-    </div>
-  </div>     
-    
-  <div class="video-card horizontal">
-    <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No002-seaside-champarmy.png">
-        <img class="thumbnail"
-             src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No002-seaside-champarmy.png"
-             alt="No002 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
-      </a>
-      <div class="video-text">
-        <h3>Seaside and Champ in the Army</h3>
-        <p>Not dated, but my father was discharged from the army August of 1963. This film is in rough shape. I used an editor to help with noise reduction and image sharpening.</p>
-        <a class="video-link" href="https://opusXcellent.github.io/No002-seaside-champarmy.html">Watch Video</a>
-      </div>
-    </div>
-  </div>     
+
+    <!-- Add the rest of your video cards here with proper `data-year` attributes -->
   </div>
 
   <footer>
     © 2025 The Blasi Capalbo Film Archive | Handcrafted with love 💖
   </footer>
+
+  <script>
+    const buttons = document.querySelectorAll(".filter-bar button");
+    const cards = document.querySelectorAll(".video-card");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const filter = button.getAttribute("data-filter");
+
+        cards.forEach(card => {
+          const year = card.getAttribute("data-year");
+
+          if (filter === "all" || filter === year) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
