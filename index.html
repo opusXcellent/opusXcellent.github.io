@@ -335,19 +335,31 @@
     const buttons = document.querySelectorAll(".filter-bar button");
     const cards = document.querySelectorAll(".video-card");
 
+    cards.forEach(card => card.style.display = "none");
+
+    const instruction = document.createElement("p");
+    instruction.textContent = "Please select a category to begin viewing videos 🎬";
+    instruction.style.textAlign = "center";
+    instruction.style.fontSize = "1.2em";
+    instruction.style.marginTop = "20px";
+    document.querySelector(".container").appendChild(instruction);
+
     buttons.forEach(button => {
       button.addEventListener("click", () => {
         const filter = button.getAttribute("data-filter");
+        let anyVisible = false;
 
         cards.forEach(card => {
           const year = card.getAttribute("data-year");
-
           if (filter === "all" || filter === year) {
             card.style.display = "block";
+            anyVisible = true;
           } else {
             card.style.display = "none";
           }
         });
+  
+        instruction.style.display = anyVisible ? "none" : "block";
       });
     });
   </script>
