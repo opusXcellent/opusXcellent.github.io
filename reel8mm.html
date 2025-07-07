@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>8 mm Reel – Film Archive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family:Quicksand,sans-serif; margin:0; padding:0; background:#f9f7f2; color:#333; }
+    header, footer { background:rgba(255,255,255,0.9); padding:20px; text-align:center; }
+    main { max-width:900px; margin:40px auto; padding:0 20px; }
+    nav.years { margin:20px 0; text-align:center; }
+    nav.years button { margin:5px; padding:10px 15px; background:#a67c52; color:white; border:none; border-radius:8px; cursor:pointer; }
+    nav.years button.active { background:#836953; font-weight:bold; }
+    .video-list { display:none; margin-top:20px; }
+    .video-list.active { display:block; }
+    .video-card { background:white; padding:20px; margin-bottom:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); display:flex; gap:20px; align-items:flex-start; }
+    .thumbnail { width:120px; border-radius:8px; }
+    .video-text h3 { margin:0 0 10px; }
+    .video-text p { margin:0 0 5px; color:#555; }
+    .video-text a { color:#2980b9; text-decoration:none; font-weight:600; }
+    .video-text a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>8 mm Reel Archive</h1>
+    <p><a href="index.html">← Back to Home</a></p>
+  </header>
+  <main>
+    <nav class="years">
+      <button data-year="2023">2023</button>
+      <button data-year="2024">2024</button>
+      <button data-year="Undated">Undated</button>
+    </nav>
+
+    <section id="list-2023" class="video-list">
+      <div class="video-card">
+        <img class="thumbnail" src="thumb1.jpg" alt="…">
+        <div class="video-text">
+          <h3>Summer Vacation</h3>
+          <p>Filmed July 2023 at the beach</p>
+          <a href="film1.html">Watch</a>
+        </div>
+      </div>
+      <!-- more cards -->
+    </section>
+
+    <section id="list-2024" class="video-list">
+      <!-- similar structure -->
+    </section>
+
+    <section id="list-Undated" class="video-list">
+      <p>No date available. Browse other reels or contact us.</p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 The Blasi Capalbo Film Archive</p>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.years button');
+    const lists = document.querySelectorAll('.video-list');
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const year = btn.dataset.year;
+      lists.forEach(l => {
+        l.classList.toggle('active', l.id === 'list-' + year);
+      });
+    }));
+  </script>
+</body>
+</html>
