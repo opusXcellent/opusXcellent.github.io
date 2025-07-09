@@ -116,7 +116,7 @@
 
     .video-card img.thumbnail {
       width: 100%;
-      max-width: 100px;
+      max-width: 75px;
       height: auto;
       border-radius: 8px;
       margin-bottom: 15px;
@@ -161,6 +161,36 @@
       background-color: rgba(255, 255, 255, 0.85);
       font-size: 0.9em;
     }
+
+    #imageModal {
+      position: fixed;
+      z-index: 1000;
+      display: none;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      text-align: center;
+    }
+
+    #imageModal .modal-content {
+      margin: 5% auto;
+      max-width: 70%;
+      max-height: 60vh;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+
+    #imageModal .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
   </style>
 </head>
 <body>
@@ -191,11 +221,10 @@
     
   <div class="video-card horizontal" data-year="Undated">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No1967-seaside-pool.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No1967-seaside-pool.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No1967-seaside-pool.png"
-             alt="No1967 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No1967 Thumbnail">
       </a>
       <div class="video-text">
         <h3>Seaside and Pool</h3>
@@ -207,11 +236,10 @@
 
   <div class="video-card horizontal" data-year="Undated">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No15157-parade-flowers.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No15157-parade-flowers.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No15157-parade-flowers.png"
-             alt="No15157 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No15157 Thumbnail">
       </a>
       <div class="video-text">
         <h3>Parade and Flowers</h3>
@@ -223,11 +251,10 @@
 
   <div class="video-card horizontal" data-year="Undated">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No04148-turtlebackzoo-airport.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No04148-turtlebackzoo-airport.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No04148-turtlebackzoo-airport.png"
-             alt="No04148 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No04148 Thumbnail">
       </a>
       <div class="video-text">
         <h3>Turtleback Zoo and the Airport</h3>
@@ -239,11 +266,10 @@
     
   <div class="video-card horizontal" data-year="1956">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No369-wedding-baseballgame.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No369-wedding-baseballgame.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No369-wedding-baseballgame.png"
-             alt="No369 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No369 Thumbnail">
       </a>
       <div class="video-text">
         <h3>A wedding and a baseball game</h3>
@@ -255,11 +281,10 @@
 
   <div class="video-card horizontal" data-year="1956">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No57946-fran-9month-theresa-ann-inpool.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No57946-fran-9month-theresa-ann-inpool.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No57946-fran-9month-theresa-ann-inpool.png"
-             alt="No57946 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No57946 Thumbnail">
       </a>
       <div class="video-text">
         <h3>Fran 9 months, Theresa and Ann in pool</h3>
@@ -271,11 +296,10 @@
 
   <div class="video-card horizontal" data-year="1956">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No1780-beach-pool.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No1780-beach-pool.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No1780-beach-pool.png"
-             alt="No1780 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No1780 Thumbnail">
       </a>
       <div class="video-text">
         <h3>More time at the beach and in the pool</h3>
@@ -287,11 +311,10 @@
 
   <div class="video-card horizontal" data-year="1956">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No326-fran-11m-kean.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No326-fran-11m-kean.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No326-fran-11m-kean.png"
-             alt="No326 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No326 Thumbnail">
       </a>
       <div class="video-text">
         <h3>Fran 11 months and Kean...?</h3>
@@ -303,11 +326,10 @@
 
   <div class="video-card horizontal" data-year="1957">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No2805-frannybaby-dads-funnyfaces.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No2805-frannybaby-dads-funnyfaces.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No2805-frannybaby-dads-funnyfaces.png"
-             alt="No2805 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No2805 Thumbnail">
       </a>
       <div class="video-text">
         <h3>Franny baby and Dad's funny faces</h3>
@@ -319,11 +341,10 @@
 
   <div class="video-card horizontal" data-year="1958">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No23149-sledding-iceskating-jumpingrope.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No23149-sledding-iceskating-jumpingrope.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No23149-sledding-iceskating-jumpingrope.png"
-             alt="No23149 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No23149 Thumbnail">
       </a>
       <div class="video-text">
         <h3>Nana and Frankie walking, Anne and baby sledding. Ice skating, jumping rope and Blackie.</h3>
@@ -335,11 +356,10 @@
   
   <div class="video-card horizontal" data-year="1958">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No3751-nana-frans-2nd-birthday.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No3751-nana-frans-2nd-birthday.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No3751-nana-frans-2nd-birthday.png"
-             alt="No3751 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No3751 Thumbnail">
       </a>
       <div class="video-text">
         <h3>Nana and Fran's 2nd Birthday</h3>
@@ -351,11 +371,10 @@
     
   <div class="video-card horizontal" data-year="1959">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No001-parade-july4th-seaside.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No001-parade-july4th-seaside.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No001-parade-july4th-seaside.png"
-             alt="No001 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No001 Thumbnail">
       </a>
       <div class="video-text">
         <h3>Parade, Theresa and Bob, 4th of July and Seaside</h3>
@@ -367,11 +386,10 @@
     
   <div class="video-card horizontal" data-year="1963">
     <div class="video-content">
-      <a href="https://myfilmarchive.s3.us-east-1.amazonaws.com/No002-seaside-champarmy.png">
+      <a href="#" onclick="openImageModal('https://myfilmarchive.s3.us-east-1.amazonaws.com/No002-seaside-champarmy.png'); return false;">
         <img class="thumbnail"
              src="https://myfilmarchive.s3.us-east-1.amazonaws.com/No002-seaside-champarmy.png"
-             alt="No002 Thumbnail"
-             style="max-width: 50px; width: 100%; height: auto;">
+             alt="No002 Thumbnail">
       </a>
       <div class="video-text">
         <h3>Seaside and Champ in the Army</h3>
@@ -420,6 +438,31 @@
         instruction.style.display = anyVisible ? "none" : "block";
       });
     });
+
+    function openImageModal(src) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+      modalImg.src = src;
+      modal.style.display = "block";
+    }
+
+    function closeImageModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("imageModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+
   </script>
+
+  <div id="imageModal">
+    <span class="close" onclick="closeImageModal()">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Full-size image">
+  </div>
+
 </body>
 </html>
