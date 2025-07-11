@@ -594,9 +594,7 @@
     instruction.style.textAlign = "center";
     instruction.style.fontSize = "1.2em";
     instruction.style.marginTop = "20px";
-    const container = document.querySelector(".container");
-    const filterBar = document.querySelector(".filter-bar");
-    container.insertBefore(instruction, filterBar);
+    document.querySelector(".container").appendChild(instruction);
     instruction.innerHTML += '<br><img src="https://myfilmarchive.s3.us-east-1.amazonaws.com/old-projector.png" alt="Decorative Film Banner" style="margin-top: 15px; max-width: 600px; width: 100%; height: auto; border-radius: 10px;">';
 
     buttons.forEach(button => {
