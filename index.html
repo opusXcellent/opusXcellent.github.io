@@ -566,7 +566,7 @@
     cards.forEach(card => card.style.display = "none");
 
     const instruction = document.createElement("p");
-    instruction.textContent = "<strong>Select a category to begin viewing videos</strong>";
+    instruction.innerHTML = '<span style="font-weight: bold;">Select a category to begin viewing videos</span>';
     instruction.style.textAlign = "center";
     instruction.style.fontSize = "1.2em";
     instruction.style.marginTop = "20px";
