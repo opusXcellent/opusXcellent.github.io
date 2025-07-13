@@ -84,6 +84,10 @@
       font-size: 0.95em;
     }
 
+    .indented {
+      text-indent: 30px;
+    }
+    
   </style>
 </head>
 <body>
@@ -107,13 +111,18 @@
     <div class="video-wrapper">
       <iframe title="vimeo-player" src="https://player.vimeo.com/video/1100662943?h=b49438bec6" width="960" height="540" allowfullscreen></iframe>
     </div>
-    
-  <div style="text-align: center;">
-    📝 <b>Tag</b> people and places by typing <b>#Name</b>. You may also include a timestamp using <b>@</b> with <b>no spaces</b>.
-    <div style="margin-top: 15px;">
-      #BigMike@1:32  #Pops  #AuntMatilda@2:02  #GarysPharmacy<br><br><br>
+
+    <div class="indented">
+      <h4>People & Places Mentioned:</h4>
+      <p><!-- names here --></p>
     </div>
-  </div>
+
+    <div style="text-align: center;">
+      📝 <b>Tag</b> people and places by typing <b>#Name</b>. You may also include a timestamp using <b>@</b> with <b>no spaces</b>.
+      <div style="margin-top: 15px;">
+        #BigMike@1:32  #Pops  #AuntMatilda@2:02  #GarysPharmacy<br><br><br>
+      </div>
+    </div>
   
     <div id="disqus_thread"></div>
     <script>
