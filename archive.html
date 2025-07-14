@@ -231,11 +231,15 @@
 
     <div class="container">
       <div class="filter-bar">
+      <div id="familyNote" style="display: none; max-width: 800px; margin: 20px auto; background: linear-gradient(to right, #fef9f4, #e4d9c4); padding: 15px 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); font-style: italic; font-size: 1.1em; color: #4d3c2d; text-align: center;">
+        📌 These videos are from the immediate Blasi Capalbo family. You're welcome to view them, but they may be less relevant to extended family and friends.
+      </div>
       <button data-filter="all">Show All</button>
       <button data-filter="1950s">1950's</button>
       <button data-filter="1960s">1960's</button>
       <button data-filter="1970s">1970's</button>
       <button data-filter="Undated">Unknown Date</button>
+      <button data-filter="immediate">Immediate Family</button>
     </div>
 
     <div class="video-card horizontal" data-year="Undated">
@@ -801,6 +805,7 @@
     <script>
       const buttons = document.querySelectorAll(".filter-bar button");
       const cards = document.querySelectorAll(".video-card");
+      const note = document.getElementById("familyNote");
 
       cards.forEach(card => card.style.display = "none");
 
@@ -814,7 +819,7 @@
         button.addEventListener("click", () => {
           const filter = button.getAttribute("data-filter");
           let anyVisible = false;
-      
+
           buttons.forEach(btn => btn.classList.remove("active"));
           button.classList.add("active");
 
@@ -829,6 +834,10 @@
           });
 
           instruction.style.display = anyVisible ? "none" : "block";
+
+          if (note) {
+            note.style.display = (filter === "immediate") ? "block" : "none";
+          }
         });
       });
 
@@ -849,8 +858,8 @@
           modal.style.display = "none";
         }
       };
-
     </script>
+
 
     <div id="imageModal">
       <span class="close" onclick="closeImageModal()">&times;</span>
