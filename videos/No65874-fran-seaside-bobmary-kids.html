@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fran Communion, Seaside Rides, Bob, Mary and Kids</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://myfilmarchive.s3.us-east-1.amazonaws.com/video-page-background.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.4;
+      z-index: -1;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: #f7f4ef;
+      margin: 0;
+      padding: 0;
+      color: #2c2c2c;
+    }
+
+    header {
+      background: linear-gradient(to right, #fef9f4, #e4d9c4);
+      padding: 40px 0 20px 0;
+      text-align: center;
+      border-bottom: 2px solid #d3c0a6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4em;
+      color: #614a3b;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.8em;
+      margin-bottom: 30px;
+      color: #8a4b1e;
+    }
+
+    .video-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    iframe {
+      max-width: 80%;
+      border-radius: 10px;
+      border: none;
+    }
+
+    #disqus_thread {
+      background-color: #fafafa;
+      border: 1px solid #e1e1e1;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    noscript {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #777;
+      font-size: 0.95em;
+    }
+
+    .video-note-box {
+      width: 640px;
+      margin: 0 auto 30px auto;
+      padding: 0px 20px;
+      background-color: transparent;
+      text-align: left;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Blasi Capalbo Film Archive 🎞️</h1>
+    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px; align-items: center; font-weight: bold; padding: 10px;">
+      <a href="https://opusXcellent.github.io/index.html" style="color: #d4a373; text-decoration: none;">Home</a>
+      <span style="color: #999;">|</span>
+      <a href="https://opusXcellent.github.io/whatsnew.html" style="color: #d4a373; text-decoration: none;">What's New</a>
+      <span style="color: #999;">|</span>
+      <a href="https://opusXcellent.github.io/access.html" style="color: #d4a373; text-decoration: none;">Access and Sharing</a>
+      <span style="color: #999;">|</span>      
+      <a href="https://opusXcellent.github.io/about.html" style="color: #d4a373; text-decoration: none;">About</a>
+      <span style="color: #999;">|</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>Fran Communion, Seaside Rides, Bob, Mary and Kids</h2>
+
+    <div class="video-wrapper">
+      <iframe title="vimeo-player" src="https://player.vimeo.com/video/1101076228?h=b3210460b4" width="960" height="540" allowfullscreen></iframe>
+    </div>
+
+    <div class="video-note-box">
+      <h4>🎞️ People & Places Mentioned:</h4>
+      <p>
+
+      </p>
+    </div>
+
+    <div style="text-align: center;">
+      <p>📝 <b>Tag</b> people and places by typing <b>#Name</b>. Include an optional timestamp using <b>@</b> with <b>no spaces</b>.</p><br>
+    </div>
+
+    <div id="disqus_thread"></div>
+    <script>
+      /*
+      var disqus_config = function () {
+        this.page.url = "https://opusXcellent.github.io/No65874-fran-seaside-bobmary-kids.html";
+        this.page.identifier = "No65874";
+      };
+      */
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://champsfilmarchive.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript" target="_blank">comments powered by Disqus</a>.
+    </noscript>
+  </div>
+</body>
+</html>
