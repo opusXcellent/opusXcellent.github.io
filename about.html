@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About This Page – The Blasi Capalbo Film Archive</title>
+  <title>About – The Blasi Capalbo Film Archive</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
     body::before {
       content: "";
       position: fixed;
@@ -26,6 +31,8 @@
       background-color: #fdfcfb;
       color: #333;
       line-height: 1.7;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
@@ -60,48 +67,52 @@
       font-size: 0.9em;
       color: #555;
       background-color: #f0f0f0;
-      margin-top: 40px;
+      margin-top: auto;
     }
+
+    .page-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
   </style>
 </head>
-<body>
+  <body>
+    <div class="page-wrapper">
+      <header>
+        <h1>About This Page</h1>
+        <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px; align-items: center; font-weight: bold; padding: 10px;">
+          <a href="https://opusXcellent.github.io/index.html" style="color: #d4a373; text-decoration: none;">Home</a>
+          <span style="color: #999;">|</span>
+          <a href="https://opusXcellent.github.io/access.html" style="color: #d4a373; text-decoration: none;">Site Access</a>
+          <span style="color: #999;">|</span>
+          <a href="https://opusXcellent.github.io/whatsnew.html" style="color: #d4a373; text-decoration: none;">What's New</a>
+          <span style="color: #999;">|</span>
+          <a href="https://opusXcellent.github.io/about.html" style="color: #d4a373; text-decoration: none;">About</a>
+          <span style="color: #999;">|</span>      
+        </div>
+      </header>
 
-  <header>
-    <h1>About This Page</h1>
-    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px; align-items: center; font-weight: bold; padding: 10px;">
-      <a href="https://opusXcellent.github.io/index.html" style="color: #d4a373; text-decoration: none;">Home</a>
-      <span style="color: #999;">|</span>
-      <a href="https://opusXcellent.github.io/access.html" style="color: #d4a373; text-decoration: none;">Site Access</a>
-      <span style="color: #999;">|</span>
-      <a href="https://opusXcellent.github.io/whatsnew.html" style="color: #d4a373; text-decoration: none;">What's New</a>
-      <span style="color: #999;">|</span>
-      <a href="https://opusXcellent.github.io/about.html" style="color: #d4a373; text-decoration: none;">About</a>
-      <span style="color: #999;">|</span>      
+      <div class="content">
+        <h2>Why I Digitized the Films Myself</h2>
+        <p>In researching professional digitization services, I found that many companies focused heavily on upselling additional services after receiving the films, essentailly holding your films hostage. While some high-quality providers do exist, they were costly — typically charging between <strong>40 to 50 cents per foot</strong> plus shipping and fees.</p>
+
+        <p>With over 3,000 feet of film in our collection, the cost would have exceeded <strong>$1,500</strong>. I decided instead to purchase a home digitizer and take on the scanning myself. This allowed me to maintain control over the process and ensure the films were handled with care. The results may lack the quality of professional equipment, but with help from open source video editing software called <strong>Shotcut</strong>, I am able to reduce noise, stabilize, sharpen and adjust coloring where necessary. </p>
+
+        <div style="text-align: center; margin: 50px 0;">
+        <img src="https://myfilmarchive.s3.us-east-1.amazonaws.com/kodak-reels.png" alt="Film Digitizer" style="max-width: 50%; height: auto;">
+        </div>
+        
+        <p>The film is cleaned by hand using a well-known industry product known as <strong>FilmGuard</strong>. This helps remove dust and condition the film for smoother handling. My father also had the original tools for splicing, and I’ve come across several reels that are in need of repair — a task I’ve taken on with his equipment.</p>
+
+        <p>This has been a long but rewarding journey, and I’m proud to share the results here.</p>
+      </div>
+
+      <footer>
+        <a href="index.html" style="color: #d4a373; text-decoration: none;">← Back to Home</a><br/>
+        © 2025 The Blasi Capalbo Film Archive
+      </footer>
     </div>
-  </header>
-
-  <div class="content">
-    <h2>Why I Digitized the Films Myself</h2>
-    <p>In researching professional digitization services, I found that many companies focused heavily on upselling additional services after receiving the films, essentailly holding your films hostage. While some high-quality providers do exist, they were costly — typically charging between <strong>40 to 50 cents per foot</strong> plus shipping and fees.</p>
-
-    <p>With over 3,000 feet of film in our collection, the cost would have exceeded <strong>$1,500</strong>. I decided instead to purchase a home digitizer and take on the scanning myself. This allowed me to maintain control over the process and ensure the films were handled with care. The results may lack the quality of professional equipment, but with help from open source video editing software called <strong>Shotcut</strong>, I am able to reduce noise, stabilize, sharpen and adjust coloring where necessary. </p>
-
-    <div style="text-align: center; margin: 20px 0;">
-     <img src="https://myfilmarchive.s3.us-east-1.amazonaws.com/kodak-reels.png" alt="Film Digitizer" style="max-width: 50%; height: auto;">
-    </div>
-    
-    <p>The film is cleaned by hand using a well-known industry product called <strong>FilmGuard</strong>. This helps remove dust and condition the film for smoother handling. My father also had the original tools for splicing, and I’ve come across several reels that are in need of repair — a task I’ve taken on with his equipment.</p>
-
-    <p>This has been a long but rewarding journey, and I’m proud to share the results here.</p>
-  </div>
-
-<div style="text-align: center; margin: 30px 0;">
-  <img src="https://myfilmarchive.s3.us-east-1.amazonaws.com/old-projector.png" alt="Old Film Projector" style="max-width: 70%; height: auto;" />
-</div>  
-
-  <footer>
-    © 2025 The Blasi Capalbo Film Archive – A Family Memory Project by Vincent Capalbo
-  </footer>
-
-</body>
+  </body>
 </html>
