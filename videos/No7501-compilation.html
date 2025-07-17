@@ -106,9 +106,13 @@
   });
 </script>
 
+  <div id="footer-container"></div>
+  <script>
+    fetch("https://opusXcellent.github.io/shared/footer-video.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      });
+  </script>
 </body>
-  <footer>
-    <a href="https://opusXcellent.github.io/index.html" style="color: #d4a373; text-decoration: none;">← Back to Home</a><br/>
-    © 2025 The Blasi Capalbo Film Archive
-  </footer>
 </html>
