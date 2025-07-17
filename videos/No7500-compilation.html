@@ -101,6 +101,22 @@
       border-top: 2px solid #d3c0a6;
       font-size: 1em;
     }
+
+    .audio-button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #d4a373;
+      border: none;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .audio-button:hover {
+      background-color: #b37a50;
+    }
   </style>
 
 </head>
@@ -125,8 +141,10 @@
     <h2>Wedding, Parades, Picnics, Baseball, Graduation, Snow and More</h2>
 
     <div class="video-wrapper">
-      <iframe title="vimeo-player" src="https://player.vimeo.com/video/1102020952?h=37dc30a607" width="960" height="540" allowfullscreen></iframe>
+      <iframe id="vimeoPlayer" title="vimeo-player" src="https://player.vimeo.com/video/1102020952?h=37dc30a607" width="960" height="540" allowfullscreen></iframe>
     </div>
+    <button id="toggleMusic" class="audio-button">🔊 Play Music</button>
+    <audio id="musicPlayer" preload="auto"></audio>
 
     <div class="video-note-box">
       <h4>🎞️ People & Places Mentioned:</h4>
@@ -159,6 +177,55 @@
       <a href="https://disqus.com/?ref_noscript" target="_blank">comments powered by Disqus</a>.
     </noscript>
   </div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+<script>
+  const iframe = document.getElementById('vimeoPlayer');
+  const player = new Vimeo.Player(iframe);
+  const music = document.getElementById('musicPlayer');
+  const toggle = document.getElementById('toggleMusic');
+
+  const musicFiles = [
+    'https://myfilmarchive.s3.us-east-1.amazonaws.com/mp3/cinematic-inspirational-epic-music-340872.mp3',
+    'https://myfilmarchive.s3.us-east-1.amazonaws.com/mp3/space-cinematic-ambient-music-340845.mp3',
+    'https://myfilmarchive.s3.us-east-1.amazonaws.com/mp3/classical-soft-piano-music-346827.mp3',
+    'https://myfilmarchive.s3.us-east-1.amazonaws.com/mp3/soft-calm-background-music-346811.mp3',
+    'https://myfilmarchive.s3.us-east-1.amazonaws.com/mp3/romantic-wedding-background-music-357203.mp3',
+    'https://myfilmarchive.s3.us-east-1.amazonaws.com/mp3/inspirational-cinematic-nature-music-357197.mp3',
+    'https://myfilmarchive.s3.us-east-1.amazonaws.com/mp3/emotional-soft-piano-music-358515.mp3',
+    'https://myfilmarchive.s3.us-east-1.amazonaws.com/mp3/background-music-soft-piano-338906.mp3',
+    'https://myfilmarchive.s3.us-east-1.amazonaws.com/mp3/instrumental-acoustic-guitar-music-361435.mp3'
+  ];
+
+  let isPlaying = false;
+
+  toggle.addEventListener('click', () => {
+    if (!isPlaying) {
+      player.setVolume(0).catch(console.error);
+      const randomIndex = Math.floor(Math.random() * musicFiles.length);
+      music.src = musicFiles[randomIndex];
+      music.volume = 0.6;
+      music.play();
+      toggle.textContent = '🔇 Mute Music / Unmute Video';
+    } else {
+      music.pause();
+      music.currentTime = 0;
+      player.setVolume(1).catch(console.error);
+      toggle.textContent = '🔊 Play Music';
+    }
+    isPlaying = !isPlaying;
+  });
+
+  music.addEventListener('ended', () => {
+    if (isPlaying) {
+      const randomIndex = Math.floor(Math.random() * musicFiles.length);
+      music.src = musicFiles[randomIndex];
+      music.play();
+    }
+  });
+</script>
+
 </body>
   <footer>
     <a href="https://opusXcellent.github.io/index.html" style="color: #d4a373; text-decoration: none;">← Back to Home</a><br/>
