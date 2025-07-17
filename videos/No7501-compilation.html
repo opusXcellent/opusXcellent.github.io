@@ -8,21 +8,14 @@
   <link rel="stylesheet" href="https://opusXcellent.github.io/shared/styles-video.css">
 </head>
 <body>
-  <header>
-    <h1>The Blasi Capalbo Film Archive 🎞️</h1>
-    <div style="display: flex; justify-content: center; gap: 20px; margin-top: 15px; align-items: center; font-weight: bold; padding: 10px;">
-      <a href="https://opusXcellent.github.io/index.html" style="color: #d4a373; text-decoration: none;">Home</a>
-      <span style="color: #999;">|</span>
-      <a href="https://opusXcellent.github.io/archive.html" style="color: #d4a373; text-decoration: none;">Archive</a>
-      <span style="color: #999;">|</span>
-      <a href="https://opusXcellent.github.io/whatsnew.html" style="color: #d4a373; text-decoration: none;">What's New</a>
-      <span style="color: #999;">|</span>
-      <a href="https://opusXcellent.github.io/access.html" style="color: #d4a373; text-decoration: none;">Site Access</a>
-      <span style="color: #999;">|</span>      
-      <a href="https://opusXcellent.github.io/about.html" style="color: #d4a373; text-decoration: none;">About</a>
-      <span style="color: #999;">|</span>
-    </div>
-  </header>
+  <div id="header-placeholder"></div>
+    <script>
+      fetch('https://opusXcellent.github.io/shared/header-video.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        });
+    </script>
 
   <div class="container">
     <h2>Parade, Snow, Religous Event, Horses and Miscellanious Clips</h2>
