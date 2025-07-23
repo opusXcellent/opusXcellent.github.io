@@ -2,7 +2,7 @@ name: Sync Disqus Comments
 
 on:
   schedule:
-    - cron: "*/10 * * * *"  # Runs every 10 minutes
+    - cron: "*/5 * * * *"  # Runs every 5 minutes
   workflow_dispatch:
 
 jobs:
