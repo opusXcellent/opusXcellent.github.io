@@ -25,4 +25,4 @@ jobs:
       env:
         DISQUS_API_KEY: ${{ secrets.DISQUS_API_KEY }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: python sync_disqus.py
+      run: python automate/get_comments.py
