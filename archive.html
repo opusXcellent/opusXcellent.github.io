@@ -1093,6 +1093,7 @@
 
       buttons.forEach(button => {
         button.addEventListener("click", () => {
+          document.getElementById("latest-comments").style.display = "none";
           const filter = button.getAttribute("data-filter");
           let anyVisible = false;
 
