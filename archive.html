@@ -208,6 +208,42 @@
       gap: 4px;
     }
 
+    .comment-bubble {
+      position: relative;
+      background: #f0f4f8;
+      border-left: 5px solid #d4a373;
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin: 55px auto;
+      font-family: 'Quicksand', sans-serif;
+      box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+      max-width: 400px;
+      transition: all 0.3s ease;
+    }
+
+    /* Odd bubbles offset to the left */
+    .comment-bubble:nth-child(odd) {
+      transform: translateX(-120px);
+    }
+
+    /* Even bubbles offset to the right */
+    .comment-bubble:nth-child(even) {
+      transform: translateX(120px);
+    }
+
+    .comment-bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 40px;
+      border-width: 15px 15px 0;
+      border-style: solid;
+      border-color: #f0f4f8 transparent transparent;
+      display: block;
+      width: 0;
+    }
+
   </style>
 </head>
 <body>
@@ -239,6 +275,7 @@
       <div id="familyNote" style="display: none; max-width: 800px; margin: 20px auto; background: linear-gradient(to right, #fef9f4, #e4d9c4); padding: 15px 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); font-style: italic; font-size: 1.1em; color: #4d3c2d; text-align: center;">
         📌 These videos are part of the immediate Blasi Capalbo family collection. They may include familiar faces and shared memories for extended family and friends as well.
       </div>
+      <div id="latest-comments" style="max-width:800px; margin:30px auto;"></div>
     </div>
 
     <div class="video-card horizontal" data-year="Undated">
@@ -1098,6 +1135,58 @@
         }
       };
     </script>
+
+    <script>
+        async function loadLatestComments() {
+            try {
+            const res = await fetch('https://opusxcellent.github.io/shared/latest_disqus_comments.json');
+            if (!res.ok) throw new Error('Failed to fetch comments.json');
+            const data = await res.json();
+
+            const latest = data.comments
+                .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+                .slice(0, 4); /* Number of comments */
+
+            const root = document.getElementById('latest-comments');
+            root.innerHTML = '<div style="margin-top: 4em;"><h2>Latest Comments</h2></div>';
+
+            latest.forEach(c => {
+                const div = document.createElement('div');
+                div.className = 'comment-bubble';
+                                
+                const link = document.createElement('a');
+                link.href = c.thread_url;
+                link.textContent = c.thread_title;
+                Object.assign(link.style, {
+                  textDecoration: 'none',
+                  color: '#2980b9',
+                  fontWeight: 'bold',
+                  marginBottom: '8px',
+                  display: 'inline'
+                });
+                
+                const meta = document.createElement('div');
+                meta.innerHTML = `<small>By <strong>${c.author}</strong> on ${new Date(c.created_at).toLocaleDateString()}</small>`;
+                meta.style = 'margin-bottom:10px;color:#555;';
+
+                const msg = document.createElement('p');
+                msg.textContent = c.message.length > 150 
+                ? c.message.substring(0,150) + '…' 
+                : c.message;
+                msg.style = 'margin:0; color:#333;';
+
+                div.append(link, meta, msg);
+                root.appendChild(div);
+            });
+            } catch (e) {
+            document.getElementById('latest-comments').innerHTML = '<p style="text-align:center;color:red;">Error loading comments.</p>';
+            console.error(e);
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', loadLatestComments);
+    </script>
+
 
     <div id="imageModal">
       <span class="close" onclick="closeImageModal()">&times;</span>
