@@ -32,6 +32,10 @@
       <button data-filter="1960s">1960's</button>
       <button data-filter="1970s">1970's</button>
       <button data-filter="Undated">Undated</button>
+      <button data-filter="immediate">Immediate Family</button>
+      <div id="familyNote" style="display: none; max-width: 800px; margin: 20px auto; background: linear-gradient(to right, #fef9f4, #e4d9c4); padding: 15px 20px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); font-style: italic; font-size: 1.1em; color: #4d3c2d; text-align: center;">
+        📌 These videos are part of the immediate Blasi Capalbo family collection. They may include familiar faces and shared memories for extended family and friends as well.
+      </div>
       <div id="latest-comments" style="max-width:800px; margin:30px auto;"></div>
     </div>
 
@@ -911,6 +915,7 @@
     <script>
       const buttons = document.querySelectorAll(".filter-bar button");
       const cards = document.querySelectorAll(".video-card");
+      const note = document.getElementById("familyNote");
 
       cards.forEach(card => card.style.display = "none");
 
@@ -941,6 +946,9 @@
 
           instruction.style.display = anyVisible ? "none" : "block";
 
+          if (note) {
+            note.style.display = (filter === "immediate") ? "block" : "none";
+          }
         });
       });
 
