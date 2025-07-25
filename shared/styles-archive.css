@@ -211,18 +211,18 @@
       font-family: 'Quicksand', sans-serif;
       box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
       text-align: left;
-      max-width: 400px;
+      max-width: 500px;
       transition: all 0.3s ease;
     }
 
     /* Odd bubbles offset to the left */
     .comment-bubble:nth-child(odd) {
-      transform: translateX(-120px);
+      transform: translateX(-140px);
     }
 
     /* Even bubbles offset to the right */
     .comment-bubble:nth-child(even) {
-      transform: translateX(120px);
+      transform: translateX(140px);
     }
 
     .comment-bubble::after {
