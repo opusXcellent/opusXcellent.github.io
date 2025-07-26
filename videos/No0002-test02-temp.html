@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test 02 Temp</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://opusXcellent.github.io/shared/styles-video.css">
+</head>
+<body>
+  <div id="header-placeholder"></div>
+    <script>
+      fetch('https://opusXcellent.github.io/shared/header-video.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        });
+    </script>
+
+  <div class="container">
+    <h2>Test 02 Temp</h2>
+
+    <div style="max-width: 700px; margin: 0 auto 20px auto; text-align: center; font-size: 1.05em; color: #6c4e3f;">
+      📌 This video is part of the immediate Blasi Capalbo family collection. They may include familiar faces and shared memories for extended family and friends as well.
+    </div>
+
+    <div class="video-wrapper">
+      <iframe id="vimeoPlayer" title="vimeo-player" src="https://player.vimeo.com/video/1104654357?h=39c05ef675" width="960" height="540" allowfullscreen></iframe>
+    </div>
+    <button id="toggleMusic" class="audio-button">🔊 Play Music</button>
+    <audio id="musicPlayer" preload="auto"></audio>
+
+    <div class="video-note-box">
+      <h4>🎞️ People & Places Mentioned:</h4>
+      <p>
+
+      </p>
+    </div>
+
+    <div style="text-align: center;">
+      <p>📝 <b>Tag</b> people and places by typing <b>#Name</b>. Include an optional timestamp using <b>@</b> with <b>no spaces</b>.</p><br>
+    </div>
+
+    <div id="disqus_thread"></div>
+    <script>
+
+      var disqus_config = function () {
+        this.page.url = "https://opusXcellent.github.io/videos/No0002-test02-temp.html";
+        this.page.identifier = "No0002";
+      };
+
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://champsfilmarchive.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript" target="_blank">comments powered by Disqus</a>.
+    </noscript>
+  </div>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://opusXcellent.github.io/shared/music.js"></script>
+
+<script>
+  const iframe = document.getElementById('vimeoPlayer');
+  const player = new Vimeo.Player(iframe);
+  const music = document.getElementById('musicPlayer');
+  const toggle = document.getElementById('toggleMusic');
+
+  let isPlaying = false;
+
+  toggle.addEventListener('click', () => {
+    if (!isPlaying) {
+      player.setVolume(0).catch(console.error);
+      const randomIndex = Math.floor(Math.random() * musicFiles.length);
+      music.src = musicFiles[randomIndex];
+      music.volume = 0.6;
+      music.play();
+      toggle.textContent = '🔇 Mute Music / Unmute Video';
+    } else {
+      music.pause();
+      music.currentTime = 0;
+      player.setVolume(1).catch(console.error);
+      toggle.textContent = '🔊 Play Music';
+    }
+    isPlaying = !isPlaying;
+  });
+
+  music.addEventListener('ended', () => {
+    if (isPlaying) {
+      const randomIndex = Math.floor(Math.random() * musicFiles.length);
+      music.src = musicFiles[randomIndex];
+      music.play();
+    }
+  });
+</script>
+
+  <div id="footer-container"></div>
+  <script>
+    fetch("https://opusXcellent.github.io/shared/footer-video.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-container").innerHTML = data;
+      });
+  </script>
+</body>
+</html>
