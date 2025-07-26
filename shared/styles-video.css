@@ -53,7 +53,7 @@
     .video-wrapper {
       display: flex;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     iframe {
@@ -80,7 +80,7 @@
     .video-note-box {
       width: 640px;
       margin: 0 auto 30px auto;
-      padding: 0px 20px;
+      padding: 20px 20px;
       background-color: transparent;
       text-align: left;
       font-size: 1.1em;
