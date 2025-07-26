@@ -52,9 +52,9 @@ def enrich_comments(comments):
             "author": comment['author']['name'],
             'message': strip_tags(comment['message']),
             "created_at": comment['createdAt'],
-            "thread_id": thread_id,
-            "thread_title": thread_details.get('title', ''),
-            "thread_url": thread_details.get('link', '')
+        'short_id': thread_info.get('identifiers', [''])[0],  # Safe fallback
+        'thread_title': thread_info.get('title', ''),
+        'thread_url': thread_info.get('link', '')
         })
     return enriched
 
