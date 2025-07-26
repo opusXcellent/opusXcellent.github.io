@@ -1050,16 +1050,7 @@
                 : c.message;
                 msg.style = 'margin:0; color:#333;';
 
-                const titleWrapper = document.createElement('div');
-                const shortId = document.createElement('span');
-                shortId.textContent = `(${c.thread_identifier})`;
-                shortId.style = 'font-size: 0.85em; color: #888;';
-
-                titleWrapper.appendChild(link);
-                titleWrapper.appendChild(shortId);
-                titleWrapper.style.marginBottom = '6px';
-
-                div.append(titleWrapper, meta, msg);
+                div.append(link, meta, msg);
                 root.appendChild(div);
             });
             } catch (e) {
