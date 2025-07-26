@@ -2,24 +2,6 @@ import requests
 import json
 import base64
 import os
-from html.parser import HTMLParser
-
-class MLStripper(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.reset()
-        self.fed = []
-
-    def handle_data(self, d):
-        self.fed.append(d)
-
-    def get_data(self):
-        return ''.join(self.fed)
-
-def strip_tags(html):
-    s = MLStripper()
-    s.feed(html)
-    return s.get_data()
 
 # === CONFIGURATION ===
 DISQUS_API_KEY = os.getenv('DISQUS_API_KEY')
@@ -50,12 +32,13 @@ def enrich_comments(comments):
         thread_details = fetch_thread_details(thread_id)
         enriched.append({
             "author": comment['author']['name'],
-            "message": strip_tags(comment['message']),
+            "message": comment['message'],
             "created_at": comment['createdAt'],
             "thread_id": thread_id,
             "thread_title": thread_details.get('title', ''),
             "thread_url": thread_details.get('link', '')
         })
+    return enriched
 
 def fetch_thread_details(thread_id):
     url = f"https://disqus.com/api/3.0/threads/details.json"
