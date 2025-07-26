@@ -53,6 +53,7 @@ def enrich_comments(comments):
             "message": strip_tags(comment['message']),
             "created_at": comment['createdAt'],
             "thread_id": thread_id,
+            "thread_identifier": thread_details.get('identifiers', [''])[0],
             "thread_title": thread_details.get('title', ''),
             "thread_url": thread_details.get('link', '')
         })
