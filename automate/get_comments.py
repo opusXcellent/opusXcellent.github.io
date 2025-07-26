@@ -46,15 +46,17 @@ def fetch_latest_comments(limit=10):
 def enrich_comments(comments):
     enriched = []
     for comment in comments:
+        thread_id = comment['thread']
+        thread_details = fetch_thread_details(thread_id)
+        enriched.append({
             "author": comment['author']['name'],
-            "message": strip_tags(post['message']),
+            "message": strip_tags(comment['message']),
             "created_at": comment['createdAt'],
             "thread_id": thread_id,
             "thread_title": thread_details.get('title', ''),
             "thread_url": thread_details.get('link', ''),
-            "short_id": thread_info.get('identifiers', [''])[0], 
+            "short_id": thread_info.get('identifiers', [''])[0],
         })
-    return enriched
 
 def fetch_thread_details(thread_id):
     url = f"https://disqus.com/api/3.0/threads/details.json"
