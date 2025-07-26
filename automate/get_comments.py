@@ -54,8 +54,7 @@ def enrich_comments(comments):
             "created_at": comment['createdAt'],
             "thread_id": thread_id,
             "thread_title": thread_details.get('title', ''),
-            "thread_url": thread_details.get('link', ''),
-            "short_id": thread_info.get('identifiers', [''])[0]
+            "thread_url": thread_details.get('link', '')
         })
 
 def fetch_thread_details(thread_id):
