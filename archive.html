@@ -1014,7 +1014,7 @@
     <script>
         async function loadLatestComments() {
             try {
-            const res = await fetch('https://opusxcellent.github.io/shared/latest_disqus_comments.json');
+            const res = await fetch('https://opusxcellent.github.io/shared/latest_disqus_comments.json?t=' + new Date().getTime());
             if (!res.ok) throw new Error('Failed to fetch comments.json');
             const data = await res.json();
 
