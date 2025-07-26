@@ -1018,7 +1018,7 @@
             if (!res.ok) throw new Error('Failed to fetch comments.json');
             const data = await res.json();
 
-            const latest = data.latest.comments
+            const latest = data.latest_comments
                 .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
                 .slice(0, 4); /* Number of comments */
 
