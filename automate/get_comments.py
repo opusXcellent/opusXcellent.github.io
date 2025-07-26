@@ -55,7 +55,7 @@ def enrich_comments(comments):
             "thread_id": thread_id,
             "thread_title": thread_details.get('title', ''),
             "thread_url": thread_details.get('link', ''),
-            "short_id": thread_info.get('identifiers', [''])[0],
+            "short_id": thread_info.get('identifiers', [''])[0]
         })
 
 def fetch_thread_details(thread_id):
