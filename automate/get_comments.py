@@ -25,7 +25,7 @@ def strip_tags(html):
 DISQUS_API_KEY = os.getenv('DISQUS_API_KEY')
 DISQUS_FORUM = 'champsfilmarchive'
 
-GITHUB_REPO = 'opusXcellent/champsfilmarchive.net'
+GITHUB_REPO = 'opusXcellent/opusxcellent.github.io'
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 GITHUB_FILE_PATH = 'shared/latest_disqus_comments.json'
 COMMIT_MESSAGE = 'Update latest Disqus comments'
