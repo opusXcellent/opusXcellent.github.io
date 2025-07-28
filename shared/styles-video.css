@@ -50,6 +50,33 @@
       color: #8a4b1e;
     }
 
+    @media screen and (max-width: 768px) {
+      .container {
+        padding: 10px 15px;
+      }
+
+      .video-wrapper {
+        margin: 20px auto;
+        max-width: 100%;
+      }
+
+      .video-wrapper iframe {
+        width: 100% !important;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        display: block;
+      }
+
+      .video-note-box {
+        margin-top: 20px;
+      }
+
+      #toggleMusic {
+        margin: 15px auto;
+        display: block;
+      }
+    }
+
     .video-wrapper {
       display: flex;
       justify-content: center;
