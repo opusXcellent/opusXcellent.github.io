@@ -232,7 +232,15 @@
       }
 
       .comment-bubble::after {
-        left: 20px; /* align tail closer to left edge */
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 40px;
+        border-width: 15px 15px 0;
+        border-style: solid;
+        border-color: #f0f4f8 transparent transparent;
+        display: block;
+        width: 0;
       }
     }
 
