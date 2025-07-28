@@ -60,16 +60,18 @@
       }
 
       .video-wrapper {
-        margin: 20px auto;
+        margin: 0 auto;
         width: 100% !important;
-        max-width: 100%;
+        max-width: none;
+        padding: 0;
         height: auto;
         aspect-ratio: 16 / 9;
       }
 
       .video-wrapper iframe {
-        width: 80vw; /* full viewport width */
-        height: calc(80vw * 9 / 16); /* maintain 16:9 */
+        width: 100% !important;
+        max-width: 100%;
+        height: auto;
         aspect-ratio: 16 / 9;
         display: block;
       }
