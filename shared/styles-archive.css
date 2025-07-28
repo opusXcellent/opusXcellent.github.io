@@ -225,25 +225,17 @@
       transform: translateX(140px);
     }
 
-    @media screen and (max-width: 768px) {
-      .comment-bubble {
-        transform: none !important;
-        margin: 30px 10px;
-      }
-
-      .comment-bubble::after {
-        content: "";
-        position: absolute;
-        bottom: -15px;
-        left: 40px;
-        border-width: 15px 15px 0;
-        border-style: solid;
-        border-color: #f0f4f8 transparent transparent;
-        display: block;
-        width: 0;
-      }
+    .comment-bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 40px;
+      border-width: 15px 15px 0;
+      border-style: solid;
+      border-color: #f0f4f8 transparent transparent;
+      display: block;
+      width: 0;
     }
-
 
     #latest-comments h2 {
       color: #000000;
