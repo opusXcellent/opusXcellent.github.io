@@ -1067,7 +1067,7 @@
 
             const latest = data.comments
                 .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
-                .slice(0, 4); /* Number of comments */
+                .slice(0, 6); /* Number of comments */
 
             const root = document.getElementById('latest-comments');
             root.innerHTML = '<div style="margin-top: 4em;"><h2>Latest Comments</h2></div>';
