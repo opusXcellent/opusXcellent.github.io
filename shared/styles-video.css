@@ -50,30 +50,27 @@
       color: #8a4b1e;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (orientation: landscape) and (max-width: 1024px) {
       .container {
-        padding: 10px 15px;
+        max-width: 100%;
+        padding: 10px;
       }
 
       .video-wrapper {
-        margin: 0 auto;
-        width: 100% !important;
-        max-width: none;
+        max-width: 100%;
         padding: 0;
-        height: auto;
-        aspect-ratio: 16 / 9;
+        margin: 0 auto;
       }
 
       .video-wrapper iframe {
-        width: 100% !important;
-        max-width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        display: block;
+        width: 100vw;
+        height: calc(100vw * 9 / 16); /* Keep 16:9 ratio */
+        border-radius: 0;
       }
 
       .video-note-box {
-        margin-top: 20px;
+        width: 95%;
+        font-size: 1em;
       }
 
       #toggleMusic {
