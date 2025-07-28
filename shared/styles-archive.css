@@ -225,6 +225,25 @@
       transform: translateX(140px);
     }
 
+    @media screen and (max-width: 768px) {
+      .comment-bubble {
+        transform: none !important;
+        margin: 30px 10px;
+        max-width: 100%;
+      }
+
+      /* Adjust bubble tail for mobile to point to left side */
+      .comment-bubble::after {
+        left: 20px; /* Default position */
+      }
+
+      .comment-bubble:nth-child(even)::after {
+        left: auto;
+        right: 20px; /* Flip to right for even */
+      }
+    }
+
+
     .comment-bubble::after {
       content: "";
       position: absolute;
