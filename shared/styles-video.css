@@ -68,8 +68,8 @@
       }
 
       .video-wrapper iframe {
-        width: 100vw; /* full viewport width */
-        height: calc(100vw * 9 / 16); /* maintain 16:9 */
+        width: 80vw; /* full viewport width */
+        height: calc(80vw * 9 / 16); /* maintain 16:9 */
         aspect-ratio: 16 / 9;
         display: block;
       }
