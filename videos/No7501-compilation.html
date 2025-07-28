@@ -3,8 +3,7 @@
 <head>
   <meta name="robots" content="noindex, nofollow">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Parade, Snow, Religous Event, Horses and Miscellanious Clips</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">  <title>Parade, Snow, Religous Event, Horses and Miscellanious Clips</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://www.champsfilmarchive.net/shared/styles-video.css">
 </head>
@@ -103,6 +102,15 @@
       .then(data => {
         document.getElementById("footer-container").innerHTML = data;
       });
+  </script>
+  <script>
+    window.addEventListener("orientationchange", function() {
+        setTimeout(() => {
+        document.body.style.display = "none";
+        document.body.offsetHeight;
+        document.body.style.display = "";
+      }, 300);
+    });
   </script>
 </body>
 </html>

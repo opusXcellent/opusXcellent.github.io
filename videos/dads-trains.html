@@ -3,8 +3,7 @@
 <head>
   <meta name="robots" content="noindex, nofollow">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dad's Trains</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">  <title>Dad's Trains</title>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     html, body {
@@ -141,5 +140,14 @@
         © 2025 The Blasi Capalbo Film Archive
       </footer>
     </div>
+    <script>
+      window.addEventListener("orientationchange", function() {
+        setTimeout(() => {
+          document.body.style.display = "none";
+          document.body.offsetHeight;
+          document.body.style.display = "";
+        }, 300);
+      });
+    </script>
   </body>
 </html>
