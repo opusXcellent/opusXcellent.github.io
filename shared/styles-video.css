@@ -149,3 +149,21 @@
     .audio-button:hover {
       background-color: #b37a50;
     }
+
+    .watch-party-button {
+    display: inline-block;
+    background-color: #f39c12;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+    }
+
+    .watch-party-button:hover {
+      background-color: #e67e22;
+    }
