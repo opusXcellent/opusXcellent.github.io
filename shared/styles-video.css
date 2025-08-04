@@ -133,7 +133,7 @@
       border-top: 3px solid #d3c0a6;
       font-size: 1em;
     }
-
+/*
     .audio-button {
       display: block;
       margin: 20px auto;
@@ -148,6 +148,22 @@
 
     .audio-button:hover {
       background-color: #b37a50;
+    }
+*/
+
+    .audio-button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #d4a373;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .audio-button:hover {
+      background-color: #c38b5f;
     }
 
     .watch-party-button {
